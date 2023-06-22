@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package film;
+
+service FilmService {
+  rpc GetFilm(GetFilmRequest) returns (FilmResponse) {}
+  rpc AddFilm(AddFilmRequest) returns (FilmResponse) {}
+}
+
+message GetFilmRequest {
+  string filmId = 1;
+}
+
+message AddFilmRequest {
+  string title = 1;
+  string director = 2;
+  int32 year = 3;
+}
+
+message FilmResponse {
+  string title = 1;
+  string director = 2;
+  int32 year = 3;
+}
